@@ -91,5 +91,5 @@ class Task {
     }
 }
 
-const toDo1 = new ToDo()
+window.ToDo = ToDo
 })()
