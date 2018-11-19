@@ -1,11 +1,12 @@
 class ToDo {
     constructor(appendLocation) {
-        this.tasks = []
+        this.tasks = JSON.parse(localStorage.getItem('toDoList')) || []
         this.appendLocation = appendLocation || document.body
         this.render()
     }
     addTask(text) {
         this.tasks.push(new Task(text))
+        this.addTasksToLocalStorage()
         this.render()
 
     }
@@ -74,6 +75,9 @@ class ToDo {
         }
     }
 
+    addTasksToLocalStorage() {
+        localStorage.setItem('toDoList', `${JSON.stringify(this.tasks)}`)
+    }
 
 }
 
