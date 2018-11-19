@@ -1,6 +1,7 @@
 class ToDo {
-    constructor() {
+    constructor(location) {
         this.tasks = []
+        this.location = location || document.body
         this.render()
     }
     addTask(text) {
@@ -9,7 +10,7 @@ class ToDo {
 
     }
     render() {
-        document.body.innerHTML = ''
+        this.location.innerHTML = ''
 
         this.makeInterface()
 
@@ -30,7 +31,7 @@ class ToDo {
             li.appendChild(buttonDelete)
             ul.appendChild(li)
         })
-        document.body.appendChild(ul)
+        this.location.appendChild(ul)
 
     }
     makeInterface() {
@@ -46,8 +47,8 @@ class ToDo {
 
 
 
-        document.body.appendChild(input)
-        document.body.appendChild(buttonAdd)
+        this.location.appendChild(input)
+        this.location.appendChild(buttonAdd)
 
     }
 
