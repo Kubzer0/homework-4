@@ -1,3 +1,4 @@
+(function(){
 class ToDo {
     constructor(appendLocation) {
         this.tasks = JSON.parse(localStorage.getItem('toDoList')) || []
@@ -91,7 +92,4 @@ class Task {
 }
 
 const toDo1 = new ToDo()
-
-
-console.log(toDo1)
-
+})()
