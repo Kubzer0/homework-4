@@ -80,7 +80,7 @@ class ToDo {
 class Task {
     constructor(text) {
         this.text = text
-        this.isCompleted = true
+        this.isCompleted = false
     }
 }
 
