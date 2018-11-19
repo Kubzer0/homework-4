@@ -6,7 +6,7 @@ class ToDo {
     }
     addTask(text) {
         this.tasks.push(new Task(text))
-        this.addTasksToLocalStorage()
+        this.updateTasksInLocalStorage()
         this.render()
 
     }
@@ -55,6 +55,7 @@ class ToDo {
 
     deleteTask(index) {
         this.tasks = this.tasks.slice(0, index).concat(this.tasks.slice(index + 1))
+        this.updateTasksInLocalStorage()
         this.render()
     }
 
@@ -75,7 +76,7 @@ class ToDo {
         }
     }
 
-    addTasksToLocalStorage() {
+    updateTasksInLocalStorage() {
         localStorage.setItem('toDoList', `${JSON.stringify(this.tasks)}`)
     }
 
