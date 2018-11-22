@@ -95,6 +95,8 @@
 
         filterTasks(input2) {
             const filteredArray = this.tasks.filter((element) => element.text === input2.value)
+            this.tasks = []
+            this.updateTasksInLocalStorage()
             console.log(filteredArray)
             this.render(filteredArray)
         }
